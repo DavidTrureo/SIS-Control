@@ -1,16 +1,23 @@
-# Gestión
+# SIS-Control
 
-Esta carpeta contiene documentos relacionados con la gestión, definición e identificación del proyecto **SIS-Control**.
+Repositorio principal de documentación, gestión, producto y evidencias del proyecto **SIS-Control**.
 
-## Propósito
+## Descripción del proyecto
 
-Registrar la información administrativa y organizativa del proyecto, incluyendo antecedentes del equipo, definición inicial del sistema y versiones del documento de identificación del proyecto.
+**SIS-Control** es un sistema orientado al control y supervisión de rondas de guardias de seguridad. El proyecto busca digitalizar el registro de rondas, checkpoints, ubicación GPS y trazabilidad operativa, permitiendo diferenciar funcionalidades según roles como administrador, supervisor y guardia.
 
-## Contenido actual
+El repositorio contiene documentación académica y técnica, evidencias de planificación, diagramas, wireframes, mockups, carta Gantt, archivos del producto y enlaces a repositorios relacionados.
+
+## Objetivo general
+
+Desarrollar una solución tecnológica que permita registrar, controlar y supervisar rondas de seguridad mediante una aplicación móvil y un backend conectado a una base de datos.
+
+## Estructura del repositorio
 
 ```text
-Gestion/
-├── Integrantes_Equipo.pdf
-├── ver_1 Registro de definición e identificación del proyecto.pdf
-├── ver_2 Registro de definición e identificación del proyecto.pdf
+SIS-Control/
+├── Documentacion/
+├── Gestion/
+├── Producto/
+├── Producto_links/
 └── README.md
