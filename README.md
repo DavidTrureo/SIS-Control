@@ -1,23 +1,51 @@
-# SIS-Control
 
-Repositorio principal de documentación, gestión, producto y evidencias del proyecto **SIS-Control**.
+```markdown
+# SIS Control - Sistema de Monitoreo y Gestión de Seguridad en Tiempo Real
 
-## Descripción del proyecto
+SIS Control es una solución tecnológica integral diseñada para optimizar, auditar y controlar las operaciones de guardias de seguridad y personal en terreno en tiempo real. El sistema resuelve problemáticas críticas del rubro, como la falta de visibilidad en las rondas de vigilancia, la demora en el reporte de incidencias y la vulnerabilidad del personal en situaciones de emergencia.
 
-**SIS-Control** es un sistema orientado al control y supervisión de rondas de guardias de seguridad. El proyecto busca digitalizar el registro de rondas, checkpoints, ubicación GPS y trazabilidad operativa, permitiendo diferenciar funcionalidades según roles como administrador, supervisor y guardia.
+Mediante una arquitectura distribuida y comunicación bidireccional instantánea, SIS Control conecta al personal de seguridad con la central de supervisión, garantizando la continuidad operativa y la integridad de las instalaciones.
 
-El repositorio contiene documentación académica y técnica, evidencias de planificación, diagramas, wireframes, mockups, carta Gantt, archivos del producto y enlaces a repositorios relacionados.
+---
 
-## Objetivo general
+## Arquitectura del Proyecto y Características
 
-Desarrollar una solución tecnológica que permita registrar, controlar y supervisar rondas de seguridad mediante una aplicación móvil y un backend conectado a una base de datos.
+El ecosistema de **SIS Control** está dividido en tres módulos principales:
 
-## Estructura del repositorio
+### 1. Aplicación de Guardia (Mobile Nativo - Android Kotlin)
+* **Validación de Rango GPS (Geofencing):** Impide que el guardia inicie jornada si no se encuentra dentro del radio permitido (500 metros) de la instalación asignada.
+* **Control de Rondas con NFC:** Registro y validación del patrullaje físico mediante el escaneo in situ de etiquetas NFC asignadas a cada punto de control.
+* **Reporte de Incidentes Georreferenciados:** Envío inmediato de anomalías con carga de evidencia fotográfica, localización exacta y comentarios.
+* **Asistente de Redacción con Inteligencia Artificial (IA):** Genera resúmenes profesionales del turno y análisis de desempeño integrando tecnologías de IA y dictado por voz.
+* **Botón de Pánico Multimodal:** Dispara alertas críticas inmediatas a la central de monitoreo mediante un slider en pantalla o por movimiento físico brusco (Shake Detection).
 
-```text
-SIS-Control/
-├── Documentacion/
-├── Gestion/
-├── Producto/
-├── Producto_links/
-└── README.md
+### 2. Panel del Administrador y Supervisor (React Native / Web)
+* **Mapa de Localización en Vivo:** Visualización interactiva sobre Google Maps de la ubicación de los guardias en servicio y su estado de patrullaje.
+* **Consola de Alertas:** Recepción y gestión en tiempo real de pánicos e incidentes.
+* **Emisión de Avisos Administrativos (Megáfono):** Envío de notificaciones y alertas globales que aparecen instantáneamente en los teléfonos de la tropa activa.
+* **Reportabilidad PDF:** Generación y descarga automática de reportes consolidados de rondas y turnos.
+
+### 3. Backend Engine (Spring Boot API)
+* Servidor centralizado que gestiona la lógica de negocio, persistencia de base de datos relacional y orquestación de la mensajería asíncrona bidireccional en tiempo real a través de WebSockets (STOMP).
+
+---
+
+## Tecnologías Utilizadas
+
+### Frontend & Mobile
+* **Android (Kotlin):** Desarrollo nativo con Jetpack Compose para la UI, Retrofit para el consumo de la API REST, Google Play Services para localización y WebSockets (STOMP client) para la conexión en tiempo real.
+* **Admin Web/Mobile (React Native):** Interfaz multiplataforma desarrollada con Expo, Axios y estilos de alta fidelidad.
+
+### Backend & Base de Datos
+* **Framework:** Spring Boot 3 (Java 17).
+* **Persistencia:** Spring Data JPA + Hibernate.
+* **Base de Datos:** MariaDB / MySQL.
+* **Mensajería en Vivo:** Spring WebSocket Broker (STOMP).
+
+---
+
+### Requisitos Previos
+* **Java SDK 17** o superior.
+* **Android Studio** (Koala o posterior).
+* **Node.js** v18+.
+* **MariaDB** o **MySQL** server activo.
